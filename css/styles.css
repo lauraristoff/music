@@ -56,6 +56,11 @@ figcaption {
     display: none;
 }
 
+#menu-links {
+  display: none;
+}
+
+
 /* Style rules for header content */
 header {
     text-align: center;
@@ -66,30 +71,40 @@ header {
  
 header h1 {
     font-family: "DM Serif Display", serif;
+    font-size: 1.5em;
+    padding: 4%;
+    margin-right: 15%;
 }
 
 /* Style rules for navigation area */
+.mobile-nav a {
+    color: #373684;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+    
+    font-family: Verdana, Arial, sans-serif; ;
+}
+ 
+.mobile-nav a.menu-icon {
+    display: block;
+    position: absolute;
+    right: 0; 
+    top: 0;  
+}
+ 
+.menu-icon div {
+    height: 50px;
+    width: 50px;
+    background-color: #373684;
+    color: #fff;
+}
+
+------------
 nav {
     background-color: #373684;
-}
- 
-nav ul {
-    list-style-type: none;
-    text-align: center;
-}
- 
-nav li {
-    display: block;
-    font-size: 2em;
-    border-top: 1px solid #e5e9fc;
-}
- 
-nav li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 0.5em 1em;
-    text-decoration: none;
 }
 
 /* Style rules for main content */
@@ -240,126 +255,147 @@ footer a {
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 550px), print {
   
-  /* Tablet Viewport: Show tab-desk class, hide mobile class */  
-  .tab-desk {
-    display: block;
-  } 
-  .mobile {
-    display: none;  
-  } 
+      /* Tablet Viewport: Show tab-desk class, hide mobile class */  
+      .tab-desk {
+        display: block;
+      } 
+      .mobile {
+        display: none;  
+      } 
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-  }
+      .mobile-nav {
+        display: none;
+      }
 
-  aside {
-    grid-column: 1/span 2;
-  }
- 
-  /* Tablet Viewport: Style rule for header content */     
-  span.tab-desk {
-    display: inline;
-  }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+      }
 
-  /*Tablet Viewport: Style rules for nav area*/
-  nav li {
-    border-top: none;
-    display: inline-block;
-    font-size: 1.5em;
-    border-right: 1px solid #e5e9fc;
-  }
+      aside {
+        grid-column: 1/span 2;
+      }
+    
+      /* Tablet Viewport: Style rule for header content */     
+      span.tab-desk {
+        display: inline;
+      }
 
-  nav li:last-child {
-    border-right: none;
-  }
+      header h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 2em;
+      }
 
-  nav li a {
-    padding: 0.25em 0.5em;
-  }
+      /*Tablet Viewport: Style rules for nav area*/
+      nav ul {
+        list-style-type: none;
+        text-align: center;
+        background-color: #373684;
+      }
+      
+      nav li {
+        border-top: none;
+        display: inline-block;
+        font-size: 1.5em;
+        border-right: 1px solid #e5e9fc;
+      }
 
-  /*Tablet Viewport: Style rule for map*/
-  .map {
-    width: 500px;
-    height: 450px;
-  }
+      nav li:last-child {
+        border-right: none;
+      }
 
-  /*Tablet Viewport: Style rule for form element*/
-  form {
-    width: 70%;
-    margin: 0 auto;
-  }
+      nav li a {
+        padding: 0.25em 0.5em;
+        display: block;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+      }
 
-}
+      /*Tablet Viewport: Style rule for map*/
+      .map {
+        width: 500px;
+        height: 450px;
+      }
+
+      /*Tablet Viewport: Style rule for form element*/
+      form {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+    }
 
 /*Media Query for Desktop Viewport*/
 @media screen and (min-width: 769px), print {
 
-  /*Desktop Viewport: Style rule for header*/
-  header {
-    padding: 2%;
-  }
+      /*Desktop Viewport: Style rule for header*/
+      header {
+        padding: 2%;
+      }
 
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+      .grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
 
-  figcaption {
-    font-size: 1em;
-    position: absolute;
-  }
-  
-  aside {
-    grid-column: 1/span 4;
-  }
-  /*Desktop Viewport: Style rule for nav area*/
-  nav li a {
-    padding: 0.5em 1.5em;
-  }
+      figcaption {
+        font-size: 1em;
+        position: absolute;
+      }
+      
+      aside {
+        grid-column: 1/span 4;
+      }
+      /*Desktop Viewport: Style rule for nav area*/
+      nav li a {
+        padding: 0.5em 1.5em;
+      }
 
-  nav li a:hover {
-      background-color: #e5e9fc;
-      color: #373684;
-  }
+      nav li a:hover {
+          background-color: #e5e9fc;
+          color: #373684;
+          transform: scale(1.2);
+      }
 
-  /*Desktop Viewport: Style Rule for main content*/
-  #info ul {
-    margin-left: 5%;
-  }
+      /*Desktop Viewport: Style Rule for main content*/
+      #info ul {
+        margin-left: 5%;
+      }
 
-  main h3 {
-    font-size: 1.5em;
-  }
+      main h3 {
+        font-size: 1.5em;
+      }
 
-  #piano, #guitar, #violin {
-    width: 29%;
-    float: left;
-    margin: 0 2%;
-  }
+      #piano, #guitar, #violin {
+        width: 29%;
+        float: left;
+        margin: 0 2%;
+      }
 
-  /*Desktop Viewport: Style rules for table element*/
-  table {
-    width: 70%;
-  }
+      /*Desktop Viewport: Style rules for table element*/
+      table {
+        width: 70%;
+      }
 
-  /*Desktop Viewport: Style rules for form elements*/
-  .form-grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 20px;
-  }
+      /*Desktop Viewport: Style rules for form elements*/
+      .form-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
+      }
 
-  .btn {
-    grid-column: 1/span 2;
-  }
+      .btn {
+        grid-column: 1/span 2;
+      }
 
-}
+    }
 
-/*Media Query for Print*/
-@media print{
-  body {
-    background-color: #fff;
-    color: #000;
-  }
+    /*Media Query for Print*/
+    @media print{
+      body {
+        background-color: #fff;
+        color: #000;
+      }
 }
