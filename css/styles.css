@@ -78,14 +78,12 @@ header h1 {
 
 /* Style rules for navigation area */
 .mobile-nav a {
-    color: #373684;
+    color: #fff;
     text-align: center;
     font-size: 2em;
     text-decoration: none;
     padding: 3%;
     display: block;
-    
-    font-family: Verdana, Arial, sans-serif; ;
 }
  
 .mobile-nav a.menu-icon {
@@ -99,9 +97,7 @@ header h1 {
     height: 50px;
     width: 50px;
     background-color: #373684;
-    color: #fff;
 }
-
 
 nav {
     background-color: #373684;
